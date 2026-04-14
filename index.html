@@ -1,208 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patrick Duran</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #0f172a, #020617);
-    color: white;
-    scroll-behavior: smooth;
-}
-
-nav {
-    position: fixed;
-    width: 100%;
-    background: rgba(15,23,42,0.6);
-    backdrop-filter: blur(12px);
-    padding: 15px 0;
-    text-align: center;
-    z-index: 1000;
-}
-
-nav a {
-    color: #cbd5f5;
-    margin: 0 20px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #38bdf8;
-}
-
-header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 3.5em;
-}
-
-header span {
-    color: #38bdf8;
-}
-
-section {
-    padding: 100px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-.projects, .skills, .interests {
-    display: grid;
-    gap: 20px;
-}
-
-.project, .skill, .interest {
-    background: rgba(30,41,59,0.5);
-    padding: 20px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-    border: 1px solid #38bdf8;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background: #38bdf8;
-    color: black;
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 
 <body>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#story">Story</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#interests">Interests</a>
-    <a href="#contact">Contact</a>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+<a href="about.html">About</a>
+<a href="experience.html">Experience</a>
+<a href="awareness.html">Awareness</a>
+<a href="contact.html">Contact</a>
 </nav>
 
-<header>
-    <h1>Patrick <span>Duran</span></h1>
-    <p>Electrical Engineering Student</p>
-</header>
-
-<section id="about" class="fade">
-    <h2>About Me</h2>
-    <p>
-        I am an Electrical Engineering student with experience in embedded systems,
-        microcontrollers, and MATLAB-based image processing.
-    </p>
-</section>
-
-<section id="story" class="fade">
-    <h2>My Story</h2>
-    <p>
-        My journey into engineering has been shaped by personal challenges that
-        pushed me to grow and adapt. Losing my mom taught me resilience and the
-        importance of staying grounded during difficult times.
-    </p>
-    <p>
-        In college, being diagnosed with ADHD and anxiety gave me a new perspective
-        on how I think and learn. I’ve learned to turn that into a strength—allowing
-        me to approach problems creatively and stay deeply focused.
-    </p>
-    <p>
-        Today, I apply that mindset to engineering, building systems that combine
-        hardware and software to solve real-world problems.
-    </p>
-</section>
-
-<section id="projects" class="fade">
-    <h2>Projects</h2>
-
-    <div class="projects">
-        <div class="project">
-            <h3>Whiteboard Detection System</h3>
-            <p>MATLAB-based boundary detection and measurement system.</p>
-        </div>
-
-        <div class="project">
-            <h3>Embedded Systems</h3>
-            <p>ATmega328P systems using interrupts, ADC, UART, and sensors.</p>
-        </div>
-
-        <div class="project">
-            <h3>Garage Parking Assist</h3>
-            <p>Distance-based LED and buzzer parking feedback system.</p>
-        </div>
+<div class="section">
+    <div>
+        <h1>Hi, I’m Patrick.</h1>
+        <p>I build systems that connect hardware and software.</p>
     </div>
-</section>
+</div>
 
-<section id="skills" class="fade">
-    <h2>Skills</h2>
-
-    <div class="skills">
-        <div class="skill">Embedded Systems (ATmega328P)</div>
-        <div class="skill">C/C++ Programming</div>
-        <div class="skill">MATLAB & Image Processing</div>
-        <div class="skill">Circuit Design & Debugging</div>
-        <div class="skill">UART, ADC, Timers</div>
+<div class="section">
+    <div class="big">
+        I don’t just study engineering.<br>
+        I build things that actually work.
     </div>
-</section>
-
-<section id="interests" class="fade">
-    <h2>Interests</h2>
-
-    <div class="interests">
-        <div class="interest">🏞️ Outdoors (hiking, biking)</div>
-        <div class="interest">🎵 Music (violin, piano)</div>
-        <div class="interest">🎨 Art (drawing, painting)</div>
-        <div class="interest">🌱 Sustainability & Plants</div>
-        <div class="interest">🐢 Animals (pet turtle Benji)</div>
-    </div>
-</section>
-
-<section id="contact" class="fade">
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-    <p>LinkedIn: your link</p>
-    <a class="btn" href="#">Download Resume</a>
-</section>
-
-<script>
-const faders = document.querySelectorAll('.fade');
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-});
-faders.forEach(el => observer.observe(el));
-</script>
+</div>
 
 </body>
 </html>
